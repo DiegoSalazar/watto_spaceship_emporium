@@ -1,33 +1,34 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @product, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :name, :class => 'text-field form-control' %>
     </div>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :manufacturer, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :manufacturer, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :product_class, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :product_class, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tech_specs, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :tech_specs, :class => 'text-field form-control' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :manufacturer %><br>
-    <%= f.text_field :manufacturer %>
-  </div>
-  <div class="field">
-    <%= f.label :product_class %><br>
-    <%= f.text_field :product_class %>
-  </div>
-  <div class="field">
-    <%= f.label :tech_specs %><br>
-    <%= f.text_area :tech_specs %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  products_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
