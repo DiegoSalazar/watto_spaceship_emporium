@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product.images.build
   end
 
   def create
@@ -56,6 +57,12 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :manufacturer, :product_class, :tech_specs)
+    params.require(:product).permit(
+      :name,
+      :manufacturer,
+      :product_class,
+      :tech_specs,
+      images_attributes: [:image]
+    )
   end
 end

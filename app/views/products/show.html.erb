@@ -13,6 +13,8 @@
       <dd><pre class="prettyprint"><%= @product.product_class %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:tech_specs) %></dt>
       <dd><pre class="prettyprint"><%= @product.tech_specs %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:thumbnail) %></dt>
+      <dd><pre class="prettyprint"><%= image_tag @product.thumbnail_url %></pre></dd>
   </dl>
 </div>
 
