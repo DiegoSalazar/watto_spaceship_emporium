@@ -45,6 +45,7 @@ gem 'bundler'
 
 group :development do
   gem 'better_errors'
+  gem 'pry'
 end
 
 gem 'binding_of_caller'

@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product.images.build
+    @product.images.build if @product.images.none?
   end
 
   def create
@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
   private
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = ProductPresenter.new Product.find(params[:id]), view_context
   end
 
   def product_params
@@ -61,8 +61,7 @@ class ProductsController < ApplicationController
       :name,
       :manufacturer,
       :product_class,
-      :tech_specs,
       images_attributes: [:image]
-    )
+    ).tap { |p| p[:tech_specs] = params[:product][:tech_specs] }
   end
 end

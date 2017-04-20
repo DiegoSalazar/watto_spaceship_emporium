@@ -25,8 +25,16 @@
   </div>
 
   <%= f.fields_for :images do |image_fields| %>
-    <div class="form-group">
-      <%= image_fields.file_field :image %>
+    <div class="form-group container">
+      <div class="row">
+        <div class="col-lg-4">
+          <%= image_fields.file_field :image %>
+        </div>
+
+        <div class="col-lg-8">
+          <%= image_tag @product.thumbnail_url %>
+        </div>
+      </div>
     </div>
   <% end %>
 
