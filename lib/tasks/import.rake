@@ -1,4 +1,5 @@
 Paperclip::Storage::S3::Aws = AWS
+Aws = AWS
 
 namespace :import do
   desc "Destroy all spaceships"
