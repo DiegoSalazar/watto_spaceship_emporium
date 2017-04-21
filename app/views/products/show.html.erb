@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-md-12">
     <h1>
       <%= @product.name %>
     </h1>
@@ -7,9 +7,9 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-7">
+  <div class="col-md-7">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-md-12">
         <%#= image_tag @product.main_image_url, class: 'main_image' %>
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -20,15 +20,7 @@
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <%= image_tag @product.main_image_url, class: 'main_image' %>
-            </div>
-            <div class="item">
-              <%= image_tag @product.main_image_url, class: 'main_image' %>
-            </div>
-            <div class="item">
-              <%= image_tag @product.main_image_url, class: 'main_image' %>
-            </div>
+            <%= render partial: 'images', locals: { image_urls: @product.image_urls } %>
           </div>
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -43,9 +35,9 @@
     </div>
   </div>
 
-  <div class="col-lg-5">
+  <div class="col-md-5">
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-md-12">
         <h2>
           Tech Specs
         </h2>
@@ -53,18 +45,19 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-md-12">
         <%= @product.tech_specs_as_dictionary_list %>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-md-6">
         <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">
+          <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
           Buy
         </button>
       </div>
-      <div class="col-lg-6">
+      <div class="col-md-6">
       </div>
     </div>
   </div>
@@ -73,16 +66,11 @@
 <hr>
 
 <div class="row">
-  <div class="col-lg-12">
-    Carousel
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-lg-12">
-    <%= link_to 'Continue Shopping', root_path, class: 'btn btn-default' %>
+  <div class="col-md-12">
+    <%= link_to root_path, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true">&nbsp;</span>
+      Continue Shopping
+    <% end %>
   </div>
 </div>
 

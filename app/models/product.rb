@@ -17,9 +17,13 @@ class Product < ActiveRecord::Base
     images.first.try :image
   end
 
+  def image_urls
+    images.map { |i| i.image.url :original }
+  end
+
   private
 
   def clear_blank_images
-    images.reject { |i| i.image_file_name.blank? }
+    self.images = images.reject { |i| i.image.blank? }
   end
 end

@@ -20,22 +20,31 @@
   <div class="form-group">
     <%= f.label :tech_specs, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_area :tech_specs, :class => 'text-field form-control' %>
+      <%= f.text_area :tech_specs, value: @product.tech_specs.to_json, class: 'text-field form-control' %>
     </div>
   </div>
 
-  <%= f.fields_for :images do |image_fields| %>
-    <div class="form-group container">
-      <div class="row">
-        <div class="col-lg-4">
-          <%= image_fields.file_field :image %>
-        </div>
+  <% @product.images.each do |image| %>
+    <%= f.fields_for :images, image do |image_fields| %>
+      <div class="form-group container">
+        <div class="row">
+          <div class="col-lg-4">
+            <%= image_fields.file_field :image %>
+          </div>
 
-        <div class="col-lg-8">
-          <%= image_tag @product.thumbnail_url %>
+          <div class="col-lg-8">
+            <% if image.image.exists? %>
+              <%= image_tag image.image.url :thumb %>
+            <% else %>
+              <p>
+                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                Upload a new image.
+              </p>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 
   <div class="form-group">

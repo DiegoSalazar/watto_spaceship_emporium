@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product.images.build if @product.images.none?
+    @product.images.build
   end
 
   def create
@@ -58,10 +58,12 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(
+      :id,
       :name,
       :manufacturer,
       :product_class,
+      :tech_specs,
       images_attributes: [:image]
-    ).tap { |p| p[:tech_specs] = params[:product][:tech_specs] }
+    ).tap { |p| p[:tech_specs] = JSON.parse params[:product][:tech_specs] }
   end
 end
