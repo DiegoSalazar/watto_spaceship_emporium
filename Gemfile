@@ -1,9 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'paperclip'
-gem 'aws-sdk', '< 2.0'
-gem 'rails_12factor'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5'
 # Use postgresql as the database for Active Record
@@ -54,3 +50,6 @@ gem 'bootstrap-sass-extras'
 gem 'glyphicons-rails'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+gem 'rails_12factor'
