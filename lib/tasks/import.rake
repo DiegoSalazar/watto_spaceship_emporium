@@ -1,3 +1,5 @@
+Paperclip::Storage::S3::Aws = AWS
+
 namespace :import do
   desc "Destroy all spaceships"
   task(clear: :environment) { Product.destroy_all }
