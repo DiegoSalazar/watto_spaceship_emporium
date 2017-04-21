@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5'
@@ -53,3 +54,4 @@ gem 'validates_formatting_of'
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem 'rails_12factor'
+gem 'puma'
