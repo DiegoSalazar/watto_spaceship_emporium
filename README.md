@@ -2,6 +2,10 @@
 
 This is a rails 4 app created to solve a front end coding challenge. It consists of a products index page and product detail page using the Bootstrap HTML framework.
 
+## Demo
+
+[https://wattos-spaceship-emporium.herokuapp.com](https://wattos-spaceship-emporium.herokuapp.com)
+
 ## Instructions
 
 After Anakin Skywalker left Watto high and dry after winning the pod racing championships and going off to train as a jedi with Liam Neeson, he needed a new way to make credits. He is starting a used spaceship dealership, and obviously will need a sleek new web application to spread the word across the galaxy.
