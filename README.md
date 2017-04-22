@@ -1,6 +1,6 @@
 # Wattos Spaceship Emporium
 
-This is a rails 4 app created to solve a front end coding challenge. It consists of a products index page and product detail page using the Bootstrap HTML framework.
+This is a Rails 5 app created to solve a front end coding challenge. It consists of a product index page and product detail page using the Bootstrap HTML framework.
 
 ## Demo
 
