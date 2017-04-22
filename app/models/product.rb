@@ -21,6 +21,10 @@ class Product < ActiveRecord::Base
     images.map { |i| i.image.url :original }.reverse
   end
 
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
+
   private
 
   def clear_blank_images
