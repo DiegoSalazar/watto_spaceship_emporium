@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
   end
 
   def main_image
-    images.first.try :image
+    images.last.try :image
   end
 
   def image_urls
