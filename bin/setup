@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "Installing dependencies..."
+gem install bundler
+bundle
+
+echo "Creating the database (make sure you have PostgreSQL installed and running)..."
+rake db:create db:migrate
+
+echo "Importing spaceship data..."
+rake import:products[http://demo7475333.mockable.io/spaceships]
+
+echo "Starting server..."
+rails s
