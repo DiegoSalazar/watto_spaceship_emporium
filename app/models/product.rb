@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
   end
 
   def image_urls
-    images.map { |i| i.image.url :original }
+    images.map { |i| i.image.url :original }.reverse
   end
 
   private
